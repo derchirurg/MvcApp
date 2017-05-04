@@ -28,7 +28,11 @@ namespace MvcApp
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc((options) =>
+            {
+                // Wichtig: Modifizieren von bestehenden Anwendungen.
+                // options.Conventions
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
