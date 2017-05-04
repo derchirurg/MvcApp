@@ -1,20 +1,14 @@
-@model MvcApp.ViewModel.PersonModel[]
-@{
-
-}
+@model IEnumerable<MvcApp.ViewModel.PersonModel>
 
 <table>
     <tr>
         <th>Anrede</th>
-        <th>Vorname</th>
-        <th>Nachname</th>
+        <th>Name</th>
     </tr>
     @foreach(var person in Model)
     {
-        <tr>
-            <td>@person.Salutation</td>
-            <td>@person.FirstName</td>
-            <td>@person.LastName</td>
-        </tr>
+        <!-- Entweder oder -->
+        <!--@await Component.InvokeAsync("Person", new { Person = person});-->
+        <vc:person person="@person"></vc:person>
     }
 </table>
