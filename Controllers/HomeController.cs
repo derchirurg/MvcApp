@@ -8,6 +8,8 @@ namespace MvcApp.Controllers
 {
     public class HomeController : Controller
     {
+        public string FullName { get; set; }
+
         public IActionResult Index()
         {
             return View();
@@ -16,6 +18,7 @@ namespace MvcApp.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
+            ViewData["FullName"] = FullName;
 
             return View();
         }
